@@ -18,8 +18,8 @@
   <Description
     DefaultValue="Search and format multiple words and phrases in Microsoft Word."/>
 
-  <IconUrl
-    DefaultValue="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
+ <IconUrl
+  DefaultValue="https://voxquintinious.github.io/find-format/icon.png"/>
 
   <SupportUrl
     DefaultValue="https://github.com"/>
