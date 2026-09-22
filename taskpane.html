@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find & Format</title>
+
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 16px;
+  background: #f7f8fa;
+  color: #242424;
+  font-size: 13px;
+}
+
+h1 { font-size: 20px; margin: 0 0 5px; }
+h2 { font-size: 14px; margin: 0 0 12px; }
+
+.subtitle { color: #666; margin-bottom: 20px; }
+
+.panel {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 5px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font: inherit;
+}
+
+textarea { resize: vertical; }
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 6px;
+}
+
+input[type="color"] {
+  height: 35px;
+  padding: 3px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  margin: 9px 0;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.row > div { flex: 1; min-width: 0; }
+
+button {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+  font: inherit;
+}
+
+button.primary {
+  background: #185abd;
+  border-color: #185abd;
+  color: white;
+  font-weight: 600;
+}
+
+button.full {
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: wait;
+}
+
+.status {
+  padding: 12px;
+  border-radius: 5px;
+  background: #e8eef8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.hidden { display: none; }
+
+small { color: #666; line-height: 1.5; }
+</style>
+</head>
+
+<body>
+
+<h1>Find & Format</h1>
+<div class="subtitle">
+Search and format multiple words in Microsoft Word.
+</div>
+
+<div class="panel">
+<h2>1. Find text</h2>
+
+<label for="terms">Words or phrases</label>
+<textarea id="terms" rows="5"
+placeholder="Enter one word or phrase per line"></textarea>
+
+<small>Each line is treated as a separate search term.</small>
+
+<label class="check">
+<input type="checkbox" id="matchCase">
+Match case
+</label>
+
+<label class="check">
+<input type="checkbox" id="wholeWord" checked>
+Whole words only
+</label>
+
+<label class="check">
+<input type="checkbox" id="regex">
+Regular expressions
+</label>
+
+<label for="scope">Search area</label>
+<select id="scope">
+<option value="document">Entire document body</option>
+<option value="selection">Selected text only</option>
+</select>
+
+<small>
+Select text in Word before choosing Selected text only.
+Regular expressions search individual paragraphs.
+</small>
+</div>
+
+<div class="panel">
+<h2>2. Text formatting</h2>
+
+<label for="bold">Bold</label>
+<select id="bold">
+<option value="keep">Keep existing</option>
+<option value="on">Apply bold</option>
+<option value="off">Remove bold</option>
+</select>
+
+<label for="italic">Italic</label>
+<select id="italic">
+<option value="keep">Keep existing</option>
+<option value="on">Apply italic</option>
+<option value="off">Remove italic</option>
+</select>
+
+<label for="underline">Underline</label>
+<select id="underline">
+<option value="keep">Keep existing</option>
+<option value="on">Apply underline</option>
+<option value="off">Remove underline</option>
+</select>
+
+<label for="font">Font family</label>
+<select id="font">
+<option value="">Keep existing</option>
+<option>Arial</option>
+<option>Aptos</option>
+<option>Calibri</option>
+<option>Times New Roman</option>
+<option>Georgia</option>
+<option>Garamond</option>
+<option>Helvetica</option>
+<option>Courier New</option>
+<option>Verdana</option>
+<option>Cambria</option>
+</select>
+
+<label for="size">Font size</label>
+<input id="size" type="number"
+min="1" max="1638" step="0.5"
+placeholder="Keep existing">
+
+<label class="check">
+<input type="checkbox" id="changeFontColor">
+Change font color
+</label>
+
+<input type="color" id="fontColor" value="#ff0000">
+
+<label for="highlight">Highlight color</label>
+<select id="highlight">
+<option value="keep">Keep existing</option>
+<option value="yellow">Yellow</option>
+<option value="green">Green</option>
+<option value="cyan">Cyan</option>
+<option value="magenta">Magenta</option>
+<option value="red">Red</option>
+<option value="blue">Blue</option>
+<option value="gray">Gray</option>
+<option value="none">Remove highlighting</option>
+</select>
+</div>
+
+<div class="panel">
+<h2>3. Formatting presets</h2>
+
+<label for="presetName">Preset name</label>
+<input id="presetName"
+placeholder="Example: Yellow highlight">
+
+<button class="full" id="savePreset">
+Save current formatting
+</button>
+
+<label for="presets">Saved presets</label>
+<select id="presets">
+<option value="">Choose a preset</option>
+</select>
+
+<div class="row">
+<button class="full" id="loadPreset">
+Load preset
+</button>
+<button class="full" id="deletePreset">
+Delete preset
+</button>
+</div>
+
+<small>
+Presets are stored in this add-in's browser storage
+on your Mac. They do not contain document text.
+</small>
+</div>
+
+<div class="panel">
+<h2>4. Apply formatting</h2>
+
+<button class="primary full" id="findButton">
+Find matches
+</button>
+
+<button class="primary full" id="applyButton">
+Apply formatting to all matches
+</button>
+
+<p><small>
+Save a copy of important documents before applying
+formatting to large numbers of matches.
+</small></p>
+</div>
+
+<div id="status" class="status">
+Initializing Microsoft Word...
+</div>
+
+<script src="taskpane.js"></script>
+</body>
+</html>
