@@ -6,7 +6,7 @@
 
   <Id>8d71b8b4-2d60-4e8d-9c3a-66e7b8c7c741</Id>
 
-  <Version>1.0.1.0</Version>
+  <Version>1.0.2.0</Version>
 
   <ProviderName>Find &amp; Format</ProviderName>
 
@@ -17,8 +17,8 @@
   <Description
     DefaultValue="Search for words and phrases and format every matching instance in Microsoft Word."/>
 
-  <IconUrl
-    DefaultValue="https://voxquintinious.github.io/find-format/icon.png"/>
+ <IconUrl
+  DefaultValue="https://voxquintinious.github.io/find-format/icon-128.png"/>
 
   <SupportUrl
     DefaultValue="https://voxquintinious.github.io/find-format/"/>
