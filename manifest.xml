@@ -1,41 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp
-    xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:type="TaskPaneApp">
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:type="TaskPaneApp">
 
-    <Id>8d71b8b4-2d60-4e8d-9c3a-66e7b8c7c741</Id>
+  <Id>8d71b8b4-2d60-4e8d-9c3a-66e7b8c7c741</Id>
 
-    <Version>1.0.0.0</Version>
+  <Version>1.0.1.0</Version>
 
-    <ProviderName>Find &amp; Format</ProviderName>
+  <ProviderName>Find &amp; Format</ProviderName>
 
-    <DefaultLocale>en-US</DefaultLocale>
+  <DefaultLocale>en-US</DefaultLocale>
 
-    <DisplayName DefaultValue="Find &amp; Format"/>
+  <DisplayName DefaultValue="Find &amp; Format"/>
 
-    <Description
-        DefaultValue="Search for words and phrases and format every matching instance in Microsoft Word."/>
+  <Description
+    DefaultValue="Search for words and phrases and format every matching instance in Microsoft Word."/>
 
-    <IconUrl
-        DefaultValue="https://voxquintinious.github.io/find-format/icon.png"/>
+  <IconUrl
+    DefaultValue="https://voxquintinious.github.io/find-format/icon.png"/>
 
-    <SupportUrl
-        DefaultValue="https://voxquintinious.github.io/find-format/"/>
+  <SupportUrl
+    DefaultValue="https://voxquintinious.github.io/find-format/"/>
 
-    <AppDomains>
-        <AppDomain>https://voxquintinious.github.io</AppDomain>
-    </AppDomains>
+  <AppDomains>
+    <AppDomain>https://voxquintinious.github.io</AppDomain>
+  </AppDomains>
 
-    <Hosts>
-        <Host Name="Document"/>
-    </Hosts>
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
 
-    <DefaultSettings>
-        <SourceLocation
-            DefaultValue="https://voxquintinious.github.io/find-format/taskpane.html"/>
-    </DefaultSettings>
+  <DefaultSettings>
+    <SourceLocation
+      DefaultValue="https://voxquintinious.github.io/find-format/taskpane.html"/>
+  </DefaultSettings>
 
-    <Permissions>ReadWriteDocument</Permissions>
+  <Permissions>ReadWriteDocument</Permissions>
 
 </OfficeApp>
