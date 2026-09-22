@@ -1,0 +1,42 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:type="TaskPaneApp">
+
+  <Id>8d71b8b4-2d60-4e8d-9c3a-66e7b8c7c741</Id>
+
+  <Version>1.0.0.0</Version>
+
+  <ProviderName>Find and Format</ProviderName>
+
+  <DefaultLocale>en-US</DefaultLocale>
+
+  <DisplayName DefaultValue="Find &amp; Format"/>
+
+  <Description
+    DefaultValue="Search and format multiple words and phrases in Microsoft Word."/>
+
+  <IconUrl
+    DefaultValue="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
+
+  <SupportUrl
+    DefaultValue="https://github.com"/>
+
+  <AppDomains>
+    <AppDomain>https://voxquintinious.github.io</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation
+      DefaultValue="https://voxquintinious.github.io/find-format/taskpane.html"/>
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+</OfficeApp>
